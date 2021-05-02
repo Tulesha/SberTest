@@ -25,6 +25,14 @@ namespace Task2
             }
         }
 
+        /// <summary>
+        /// Функция расчета аванса
+        /// </summary>
+        /// <param name="company">Компания</param>
+        /// <param name="worker">Рабочий</param>
+        /// <param name="d1">Первый день месяца</param>
+        /// <param name="d2">Последний день месяца</param>
+        /// <returns>Аванс для рабочего</returns>
         static double CalculatePrepaidExpense(Company company, Worker worker, DateTime d1, DateTime d2)
         {
             if (company.AdvPrc == 0)
@@ -44,6 +52,12 @@ namespace Task2
             return worker.Salary / worker.PlanDays * worker.WorkDays * company.AdvPrc;
         }
 
+        /// <summary>
+        /// Случайная генерация рабочих дней
+        /// </summary>
+        /// <param name="year">Год</param>
+        /// <param name="month">Месяц</param>
+        /// <returns>Случайное число отработанных дней</returns>
         static int GenerateWorkDays(int year, int month)
         {
             Random rng = new Random();
